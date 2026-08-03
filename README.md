@@ -6,6 +6,7 @@ This project develops a bioinformatics pipeline to analyze missense variants in 
 
 
 *Repository Structure*
+
 ```
 .
 |-- Figures
@@ -44,6 +45,7 @@ This project develops a bioinformatics pipeline to analyze missense variants in 
 
 ```
 *Objectives*
+
 Retrieve PAH variants from ClinVar
 Filter for missense mutations
 Predict pathogenicity using MutPred2 (run using Linux skills) and PhD-SNPg (run on web server)
@@ -51,6 +53,7 @@ Visualize mutation distributions
 Build machine learning models to classify pathogenic variants
 
 *Workflow*
+
 1. Retrieve ClinVar records through the NCBI E-utilities API
 2. Parse XML records using Biopython
 3. Filter missense variants
@@ -60,6 +63,7 @@ Build machine learning models to classify pathogenic variants
 7. Train machine learning classifiers (in progress)
 
 *Technologies*
+
 Python
 Biopython
 pandas
@@ -71,6 +75,7 @@ MutPred2
 PhD-SNPg
 
 *Current Status*
+
 Work in Progress
 
 *Upcoming additions*
