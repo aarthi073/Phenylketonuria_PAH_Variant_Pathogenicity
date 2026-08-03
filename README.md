@@ -38,8 +38,10 @@ This project develops a bioinformatics pipeline to analyze missense variants in 
 |   |-- boxplot.py
 |   |-- clean.py
 |   |-- esummary.py
+|   |-- mutpred.sh
 |   `-- variants_esearch.py
 `-- README.md
+
 ```
 *Objectives*
 Retrieve PAH variants from ClinVar
