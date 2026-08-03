@@ -1,0 +1,500 @@
+Leu293Ser
+Likely pathogenic
+Ser250Phe
+Likely pathogenic
+Tyr277His
+Likely pathogenic
+Ala322Asp
+Pathogenic
+Asp151Asn
+Likely pathogenic
+Pro407Thr
+Likely pathogenic
+Ile406Arg
+Likely pathogenic
+Asp394Gly
+Pathogenic
+Val177Ala
+Likely pathogenic
+Ala132Thr
+Uncertain significance
+Leu293Met
+Likely pathogenic
+Glu76Asp
+Uncertain significance
+Gly171Glu
+Likely pathogenic
+Gln304Pro
+Likely pathogenic
+Phe149Ser
+Uncertain significance
+Gln232His
+Likely pathogenic
+Cys284Tyr
+Likely pathogenic
+Pro416Leu
+Pathogenic
+Gly171Trp
+Uncertain significance
+Gly289Glu
+Pathogenic
+Asn426His
+Uncertain significance
+Asp129Ala
+Uncertain significance
+Leu194Arg
+Likely pathogenic
+Gln375His
+Likely pathogenic
+Ala132Val
+Likely pathogenic
+Glu183Gly
+Pathogenic
+Asp229Gly
+Likely pathogenic
+Lys184Asn
+Likely pathogenic
+Cys203Gly
+Likely pathogenic
+Asp151Glu
+Likely pathogenic
+Arg86Pro
+Likely pathogenic
+Pro89Thr
+Likely pathogenic
+Pro279Thr
+Pathogenic
+Asp84Asn
+Likely pathogenic
+His271Asn
+Pathogenic
+Thr238Ile
+Pathogenic
+Asp338Val
+Pathogenic
+Arg158Gly
+Pathogenic
+Pro362Leu
+Pathogenic
+Thr418Asn
+Pathogenic
+Ile324Asn
+Pathogenic
+Leu385Pro
+Likely pathogenic
+Ser310Cys
+Likely pathogenic
+Thr193Ile
+Conflicting classifications of pathogenicity
+Arg169Leu
+Pathogenic
+Thr266Ile
+Likely pathogenic
+Ser67Ala
+Pathogenic
+
+Pathogenic
+Ala202Thr
+Likely pathogenic
+Gly332Arg
+Likely pathogenic
+Ser196Thr
+Uncertain significance
+Arg111Gln
+Conflicting classifications of pathogenicity
+Val245Leu
+Pathogenic
+Arg420Gly
+Pathogenic/Likely pathogenic
+Phe260Leu
+Likely pathogenic
+Ile224Val
+Likely pathogenic
+Glu214Gly
+Likely pathogenic
+Met276Thr
+Pathogenic/Likely pathogenic
+Ile224Leu
+Likely pathogenic
+Arg71Cys
+Uncertain significance
+Phe121Leu
+Pathogenic
+Ile174Asn
+Likely pathogenic
+Glu280Ala
+Pathogenic
+Ser391Ile
+Pathogenic/Likely pathogenic
+Thr186Ala
+Pathogenic
+Ser67Tyr
+Likely pathogenic
+Ser350Cys
+Likely pathogenic
+Lys192Glu
+Uncertain significance
+Ala300Gly
+Likely pathogenic
+His290Gln
+Pathogenic
+Gly307Val
+Likely pathogenic
+Gln172Arg
+Likely pathogenic
+Cys217Phe
+Likely pathogenic
+Pro366Ala
+Uncertain significance
+Lys341Asn
+Likely pathogenic
+Ser339Phe
+Likely pathogenic
+Ala104Val
+Likely pathogenic
+Pro362Ser
+Likely pathogenic
+Ile318Val
+Uncertain significance
+Asp415Val
+Pathogenic
+Glu66Lys
+Likely pathogenic
+Leu333Pro
+Likely pathogenic
+Gly307Asp
+Likely pathogenic
+Asn223Tyr
+Uncertain significance
+Thr200Asn
+Uncertain significance
+Pro279Cys
+Likely pathogenic
+Val379Ala
+Uncertain significance
+Ile269Val
+Likely pathogenic
+His107Pro
+Likely pathogenic
+Arg420Thr
+Conflicting classifications of pathogenicity
+Asn61Ser
+Uncertain significance
+Gly188Ser
+Conflicting classifications of pathogenicity
+Ala313Glu
+Likely pathogenic
+Asp143Val
+Pathogenic/Likely pathogenic
+Thr186Ile
+Likely pathogenic
+Asp145Glu
+Likely pathogenic
+Lys42Arg
+Likely pathogenic
+Asp222Glu
+Likely pathogenic
+His170Pro
+Pathogenic/Likely pathogenic
+Asp296Asn
+Likely pathogenic
+Glu205Gly
+Likely pathogenic
+Ala156Gly
+Likely pathogenic
+Arg241Ser
+Likely pathogenic
+Asp338Ala
+Conflicting classifications of pathogenicity
+Arg71Pro
+Uncertain significance
+Pro211Gln
+Likely pathogenic
+Arg53Ser
+Likely pathogenic
+Tyr386His
+Likely pathogenic
+Ala309Ser
+Likely pathogenic
+Ala156Val
+Likely pathogenic
+His201Gln
+Likely pathogenic
+Pro281Arg
+Pathogenic
+Gly312Val
+Pathogenic
+Gly103Asp
+Pathogenic
+Glu205Asp
+Pathogenic/Likely pathogenic
+Glu78Asp
+Uncertain significance
+Gly171Arg
+Pathogenic
+Pro281His
+Pathogenic/Likely pathogenic
+Ala309Thr
+Likely pathogenic
+Lys361Gln
+Likely pathogenic
+Leu369Val
+Likely pathogenic
+Ser359Leu
+Likely pathogenic
+Trp326Ser
+Likely pathogenic
+Leu227Gln
+Likely pathogenic
+Phe233Leu
+Pathogenic
+Pro244Ser
+Likely pathogenic
+Thr372Arg
+Likely pathogenic
+Tyr387Asp
+Likely pathogenic
+Tyr417Asp
+Likely pathogenic
+Tyr417Cys
+Likely pathogenic
+Ala434Val
+Likely pathogenic
+Ala202Val
+Likely pathogenic
+Asp415Tyr
+Pathogenic
+Glu368Gly
+Uncertain significance
+Tyr154Cys
+Likely pathogenic
+Gln304Lys
+Likely pathogenic
+Glu182Lys
+Pathogenic
+Leu287Met
+Likely pathogenic
+Pro366Ser
+Likely pathogenic
+Phe263Leu
+Likely pathogenic
+Ile283Val
+Likely pathogenic
+Glu228Asp
+Likely pathogenic
+Leu227Val
+Likely pathogenic
+Asn167Tyr
+Uncertain significance
+Gly188Val
+Likely pathogenic
+Pro366Leu
+Conflicting classifications of pathogenicity
+Ile35Met
+Uncertain significance
+Pro416Thr
+Likely pathogenic
+Arg413Gly
+Uncertain significance
+Ile324Val
+Uncertain significance
+Arg400Ser
+Likely pathogenic
+Pro122Ser
+Likely pathogenic
+Asp75His
+Likely pathogenic
+Ser70Phe
+Likely pathogenic
+Phe402Val
+Likely pathogenic
+Phe402Cys
+Likely pathogenic
+Val45Phe
+Pathogenic
+
+Likely pathogenic
+Lys396Arg
+Likely pathogenic
+His170Gln
+Pathogenic
+Arg413His
+Pathogenic/Likely pathogenic
+Thr418Ile
+Likely pathogenic
+Phe410Ile
+Likely pathogenic
+Tyr377Asp
+Likely pathogenic
+Pro225Leu
+Likely pathogenic
+His220Pro
+Likely pathogenic
+Arg420Met
+Likely pathogenic
+Phe299Ser
+Uncertain significance
+Arg169Ser
+Pathogenic
+Ala373Asp
+Likely pathogenic
+Gln375Arg
+Uncertain significance
+Tyr343Asn
+Likely pathogenic
+Thr278Ser
+Likely pathogenic
+Leu348Pro
+Likely pathogenic
+Arg252Pro
+Likely pathogenic
+Gln226Lys
+Likely pathogenic
+Glu178Lys
+Pathogenic
+Ile94Val
+Uncertain significance
+Leu62Pro
+Likely pathogenic
+Gly148Asp
+Likely pathogenic
+Phe382Leu
+Likely pathogenic
+Gly148Arg
+Likely pathogenic
+Phe121Val
+Likely pathogenic
+Ala447Thr
+Pathogenic
+Phe392Ile
+Pathogenic
+Gln172His
+Likely pathogenic
+Glu319Gly
+Conflicting classifications of pathogenicity
+Gln301His
+Likely pathogenic
+Gln301Pro
+Pathogenic
+Arg297Leu
+Likely pathogenic
+Ala165Asp
+Likely pathogenic
+Leu98Val
+Likely pathogenic
+His290Tyr
+Likely pathogenic
+Pro362Arg
+Likely pathogenic
+Gln172His
+Likely pathogenic
+Gln375Glu
+Likely pathogenic
+Asp75Asn
+Likely pathogenic
+Ile421Ser
+Likely pathogenic
+Pro292Leu
+Likely pathogenic
+Asp435Val
+Likely pathogenic
+Glu370Gly
+Likely pathogenic
+Glu368Lys
+Likely pathogenic
+Tyr154Phe
+Likely pathogenic
+Ile406Val
+Likely pathogenic
+Thr238Ala
+Likely pathogenic
+Tyr268Cys
+Likely pathogenic
+Leu287Val
+Likely pathogenic
+Phe233Ile
+Pathogenic
+Arg157Thr
+Uncertain significance
+Gln232Glu
+Likely pathogenic
+Leu258Pro
+Likely pathogenic
+Asp75Gly
+Likely pathogenic
+Asp75Val
+Likely pathogenic
+Gly46Arg
+Likely pathogenic
+Asp59Val
+Uncertain significance
+His271Gln
+Likely pathogenic
+Gly312Arg
+Uncertain significance
+Phe263Ser
+Pathogenic
+Arg157Asn
+Uncertain significance
+Arg261Leu
+Likely pathogenic
+Met1Ile
+Likely pathogenic
+His290Gln
+Likely pathogenic
+Pro416Gln
+Likely pathogenic
+Val230Ala
+Likely pathogenic
+Phe382Leu
+Pathogenic
+Ser196Tyr
+Uncertain significance
+Leu358Phe
+Likely pathogenic
+Gln267Arg
+Pathogenic
+Pro175Ser
+Likely pathogenic
+Arg155Cys
+Likely pathogenic
+Asp101Asn
+Likely pathogenic
+Gly103Cys
+Uncertain significance
+Ile406Met
+Likely pathogenic
+Gly148Val
+Likely pathogenic
+Gln419Arg
+Pathogenic
+Cys357Arg
+Pathogenic/Likely pathogenic
+Gly103Ser
+Likely pathogenic
+Gln429Lys
+Likely pathogenic
+Met276Ile
+Likely pathogenic
+Leu444Phe
+Likely pathogenic
+Arg169Gly
+Pathogenic
+Asn223Ile
+Likely pathogenic
+Gly289Arg
+Pathogenic
+Pro279Ala
+Pathogenic/Likely pathogenic
+Gly346Glu
+Likely pathogenic
+Arg169Pro
+Uncertain significance
+Gly312Cys
+Likely pathogenic
+Leu213Phe
+Uncertain significance
+Asp253Asn
+Uncertain significance
+Gln301Lys
+Conflicting classifications of pathogenicity
