@@ -1,5 +1,5 @@
 **PAH Variant Pathogenicity Analysis**
-
+#NEED FEATURE CORRELATION MAP (CORR=X.CORR(NUMERIC_ONLY=TRUE)
 *Overview*
 
 This project develops a bioinformatics pipeline to analyze missense variants in the PAH gene associated with phenylketonuria (PKU). The workflow retrieves clinical variant data from ClinVar, preprocesses pathogenic missense substitutions, predicts variant pathogenicity, and visualizes mutation characteristics.
@@ -46,11 +46,15 @@ This project develops a bioinformatics pipeline to analyze missense variants in 
 ```
 *Objectives*
 
-Retrieve PAH variants from ClinVar
-Filter for missense mutations
-Predict pathogenicity using MutPred2 (run using Linux skills) and PhD-SNPg (run on web server)
-Visualize mutation distributions
-Build machine learning models to classify pathogenic variants
+- Retrieve PAH variants from ClinVar
+
+- Filter for missense mutations
+
+- Predict pathogenicity using MutPred2 (run using Linux skills) and PhD-SNPg (run on web server)
+
+- Visualize mutation distributions
+
+- Build machine learning models to classify pathogenic variants
 
 *Workflow*
 
