@@ -210,11 +210,15 @@ PhD-SNPg provides information including:
 The predictions from MutPred2 and PhD-SNPg were compared based on pathogenicity results. 
 
 ![Beeswarm](./Figures/MutPred2_Score_Beeswarm.png)
+
 ![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Altered_Nucleotide_Stripplot)
+
 ![Phd_SNPg_PhyloP100_Beeswarm](./Figures/PhD_SNPg_PhyloP100_Beeswarm)
+
 ![Phd_SNPg_Score_Beeswarm](./Figures/PhD_SNPg_Score_Beeswarm)
 
 ![MutPred2_Pathogenicity_Boxplot](./Figures/MutPred2_Score_Pathogenicity_Boxplot)
+
 ![PhD_SNPg_Boxplot](./Figures/PhD_SNPg_Score_Pathogenicity_Boxplot)
 
 When the pathogenicity labels were extracted from the ClinVar results for missense variants, there were no benign labels. The stripplots and beeswarm plots of both MutPred2 and PhD-SNPg show that the majority of the substitutions are pathogenic in PAH. However, there are still benign predictions. This is contrary to the original dataset predictions, and zooms in on specific substitutions to be more probable pathogenic candidates. Moreover, the interquartile range of MutPred2 predictions are narrower in the Benign class than the Pathogenic class, while that of the PhD_SNPg predictions do not look too different.
