@@ -1,11 +1,14 @@
-#Background
+# Background
 
 Phenylketonuria (PKU) is an autosomal recessive inborn error of metabolism caused primarily by pathogenic variants in the phenylalanine hydroxylase (PAH) gene. PAH encodes a hepatic enzyme that catalyzes the conversion of phenylalanine (Phe) to tyrosine (Tyr). When PAH function is impaired, Phe accumulates in the blood and can cross the blood-brain barrier, resulting in neurological toxicity.
+
 Untreated PKU can lead to intellectual disability, seizures, behavioral abnormalities, and other neurological complications. Early diagnosis and treatment are therefore critical.
+
 PAH requires the cofactor tetrahydrobiopterin (BH4) for catalytic activity. Tyrosine produced by PAH is also a precursor to melanin, which helps explain the hypopigmentation sometimes observed in individuals with PKU.
+
 This project investigates the pathogenicity of missense variants in PAH using experimentally curated ClinVar classifications and computational protein-level pathogenicity predictors. The goal is to characterize how different amino acid substitutions are predicted to affect PAH and to explore machine-learning approaches for variant classification.
 
-#Motivation
+# Motivation
 
 PKU is one of the best-characterized inherited metabolic disorders and provides an important model for studying genotype–phenotype relationships and precision medicine.
 
@@ -23,7 +26,7 @@ Emerging approaches include large neutral amino acid supplementation to reduce P
 
 Understanding which specific PAH variants are associated with pathogenicity can help improve variant interpretation and prioritization, providing insight into how individual amino acid substitutions may disrupt PAH function.
 
-#Repository Structure
+# Repository Structure
 
 ```
 .
@@ -75,7 +78,7 @@ Understanding which specific PAH variants are associated with pathogenicity can 
 `-- PKU_README.md
 ```
 
-**Project Workflow**
+# Project Workflow
 
 Retrieve ClinVar records through the NCBI E-utilities API
 
@@ -92,7 +95,7 @@ Generate visualizations
 Train machine learning classifiers (in progress)
 
 
-**Dataset**
+# Dataset
 
 PAH variants were obtained from ClinVar using NCBI E-utilities through command-line and Python-based workflows.
 
@@ -207,9 +210,9 @@ PhD-SNPg provides information including:
 The predictions from MutPred2 and PhD-SNPg were compared based on pathogenicity results. 
 
 ![Beeswarm](./Figures/MutPred2_Score_Beeswarm.png)
-![Alternate_Nucleotide_Stripplot](./Figures/Phd_SNPg_Altered_Nucleotide_Stripplot)
-![Phd_SNPg_PhyloP100_Beeswarm](./Figures/Phd_SNPg_PhyloP100_Beeswarm)
-![Phd_SNPg_Score_Beeswarm](./Figures/Phd_SNPg_Score_Beeswarm)
+![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Altered_Nucleotide_Stripplot)
+![Phd_SNPg_PhyloP100_Beeswarm](./Figures/PhD_SNPg_PhyloP100_Beeswarm)
+![Phd_SNPg_Score_Beeswarm](./Figures/PhD_SNPg_Score_Beeswarm)
 
 ![MutPred2_Pathogenicity_Boxplot](./Figures/MutPred2_Score_Pathogenicity_Boxplot)
 ![PhD_SNPg_Boxplot](./Figures/PhD_SNPg_Score_Pathogenicity_Boxplot)
@@ -249,7 +252,7 @@ The initial models included:
 
 Since amino acid substitutions can alter protein charges and physicochemical properties, pI-related features may provide useful information for distinguishing variants with different functional effects.
 
-*SVM Results*
+**SVM Results**
 
 The best initial SVM configuration achieved:
 
@@ -261,13 +264,13 @@ Gamma:    0.01
 
 ![SVM_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_SVM)
 
-*PCA Visualization*
+**PCA Visualization**
 
 ![SVM_PCA](./Figure/SVM_PCA)
 
 A Radial Basis Function (RBF) is suited for this kind of problem because amino acid substitution effects on pathogenicity are unlikely to be linearly separable, as it is a biologically non-linear problem.
 
-*Random Forest Results*
+**Random Forest Results**
 
 The initial Random Forest model achieved:
 
@@ -281,7 +284,7 @@ The Random Forest model slightly outperformed the initial SVM model based on acc
 
 However, these results should be interpreted cautiously because the dataset is relatively small. Additional validation and feature engineering are needed before assessing the generalizability of these models.
 
-*Discussion*
+**Discussion**
 
 This project combines clinical variant data, protein-level pathogenicity prediction, and machine learning to investigate missense variation in PAH associated with PKU.
 
@@ -343,7 +346,7 @@ Additionally, running the machine learning pipelines on additional mutations suc
 
 - AlphaFold
 
-*Machine Learning*
+**Machine Learning**
 
 - Support Vector Machines
 
@@ -351,7 +354,7 @@ Additionally, running the machine learning pipelines on additional mutations suc
 
 - Principal Component Analysis (PCA)
 
-*Data Analysis & Visualization*
+**Data Analysis & Visualization**
 
 - pandas
 
