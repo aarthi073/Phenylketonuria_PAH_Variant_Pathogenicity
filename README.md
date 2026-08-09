@@ -211,15 +211,15 @@ The predictions from MutPred2 and PhD-SNPg were compared based on pathogenicity 
 
 ![Beeswarm](./Figures/MutPred2_Score_Beeswarm.png)
 
-![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Altered_Nucleotide_Stripplot)
+![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Altered_Nucleotide_Stripplot.png)
 
-![Phd_SNPg_PhyloP100_Beeswarm](./Figures/PhD_SNPg_PhyloP100_Beeswarm)
+![Phd_SNPg_PhyloP100_Beeswarm](./Figures/PhD_SNPg_PhyloP100_Beeswarm.png)
 
-![Phd_SNPg_Score_Beeswarm](./Figures/PhD_SNPg_Score_Beeswarm)
+![Phd_SNPg_Score_Beeswarm](./Figures/PhD_SNPg_Score_Beeswarm.png)
 
-![MutPred2_Pathogenicity_Boxplot](./Figures/MutPred2_Score_Pathogenicity_Boxplot)
+![MutPred2_Pathogenicity_Boxplot](./Figures/MutPred2_Score_Pathogenicity_Boxplot.png)
 
-![PhD_SNPg_Boxplot](./Figures/PhD_SNPg_Score_Pathogenicity_Boxplot)
+![PhD_SNPg_Boxplot](./Figures/PhD_SNPg_Score_Pathogenicity_Boxplot.png)
 
 When the pathogenicity labels were extracted from the ClinVar results for missense variants, there were no benign labels. The stripplots and beeswarm plots of both MutPred2 and PhD-SNPg show that the majority of the substitutions are pathogenic in PAH. However, there are still benign predictions. This is contrary to the original dataset predictions, and zooms in on specific substitutions to be more probable pathogenic candidates. Moreover, the interquartile range of MutPred2 predictions are narrower in the Benign class than the Pathogenic class, while that of the PhD_SNPg predictions do not look too different.
 
@@ -266,11 +266,11 @@ C:        0.1
 
 Gamma:    0.01
 
-![SVM_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_SVM)
+![SVM_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_SVM.png)
 
 **PCA Visualization**
 
-![SVM_PCA](./Figure/SVM_PCA)
+![SVM_PCA](./Figure/SVM_PCA.png)
 
 A Radial Basis Function (RBF) is suited for this kind of problem because amino acid substitution effects on pathogenicity are unlikely to be linearly separable, as it is a biologically non-linear problem.
 
@@ -282,7 +282,7 @@ Accuracy: 0.656
 
 Number of trees: 10
 
-![Random_Forest_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_Random_Forest)
+![Random_Forest_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png)
 
 The Random Forest model slightly outperformed the initial SVM model based on accuracy.
 
