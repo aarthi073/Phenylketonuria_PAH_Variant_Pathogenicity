@@ -270,7 +270,7 @@ Gamma:    0.01
 
 **PCA Visualization**
 
-![SVM_PCA](./Figure/SVM_PCA.png)
+![SVM_PCA](./Figures/SVM_PCA.png)
 
 A Radial Basis Function (RBF) is suited for this kind of problem because amino acid substitution effects on pathogenicity are unlikely to be linearly separable, as it is a biologically non-linear problem.
 
@@ -296,7 +296,8 @@ An important observation was that the ClinVar-derived dataset and computational 
 
 This discrepancy provides an opportunity to investigate individual PAH substitutions in greater detail rather than treating all clinically associated variants as equivalent.
 
-The initial machine-learning models achieved approximately 63–66% accuracy, suggesting that variant-level biochemical and sequence features may contain predictive information. However, these preliminary results are not sufficient to establish a clinically useful classifier.
+The initial machine-
+learning models achieved approximately 63–66% accuracy, suggesting that variant-level biochemical and sequence features may contain predictive information. However, these preliminary results are not sufficient to establish a clinically useful classifier.
 
 8. Next Steps
 
