@@ -34,9 +34,11 @@ def subs(X):
                 match = re.match(r"([A-Z])(\d+)([A-Z])",i)
                 if not match:
                         print(f"Failed to parse: {i}")
-                orig_aa.append(match.group(1))
-                pos.append(match.group(2))
-                new_aa.append(match.group(3))
+                else:
+                
+                        orig_aa.append(match.group(1))
+                        pos.append(match.group(2))
+                        new_aa.append(match.group(3))
         return pd.DataFrame({
         "orig_aa": orig_aa,       
         "pos":pos,
@@ -45,16 +47,27 @@ def subs(X):
 
 df_new = subs(df)
 
+
+counts = df["pathogenicity"]["pathogenicity"].value_counts()
+unusable_classes = counts[counts < 2].index
+if len(unusable_classes) > 0:
+        for c in unusable_classes: 
+                df["pathogenicity"]["pathogenicity"] = df["pathogenicity"]["pathogenicity"].replace(f"{c}", "Benign/Likely benign")
+
+
 #define features (x) and response variable (y)
 X = df_new[["orig_aa", "pos", "new_aa"]]
 y = df["pathogenicity"]
 
-#Label Encoding: transforms text categories of the response variable into numbers 
+#Label Encoding: transforms text categories of the response variable into numbers
 le = LabelEncoder()
 #1D array expected
 y_encoded = le.fit_transform(np.ravel(y))
 
-print(le.classes_)
+#print(unusable_classes)
+#print(le.classes_)
+#print(pd.Series(y_encoded).value_counts())	
+
 #One-hot encoding and standardizing features
 #multi-columns of 0/1 for each amino acid 
 
