@@ -349,8 +349,6 @@ Additionally, running the machine learning pipelines on additional mutations suc
 
 - PhD-SNPg
 
-- AlphaFold
-
 **Machine Learning**
 
 - Support Vector Machines
