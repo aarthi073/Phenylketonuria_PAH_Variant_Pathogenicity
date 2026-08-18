@@ -1,5 +1,4 @@
-snakemake command; snakemake --cores 4 --forceall
-
+Note: MutPred2 was run on a high performance cluster and PhD-SNPg was run on the web server, so they are not included on the snakemake workflow.
 
 # Background
 
