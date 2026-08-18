@@ -33,6 +33,8 @@ Understanding which specific PAH variants are associated with pathogenicity can 
 ```
 .
 |-- Figures
+|   |-- Important_Features_Random_Forest.png
+|   |-- Important_Features_SVM.png
 |   |-- MutPred2_Score_Beeswarm.png
 |   |-- MutPred2_Score_Pathogenicity_Boxplot.png
 |   |-- MutPred2_Score_Stripplot.png
@@ -42,6 +44,7 @@ Understanding which specific PAH variants are associated with pathogenicity can 
 |   |-- PhD_SNPg_PhyloP100_Beeswarm.png
 |   |-- PhD_SNPg_Score_Beeswarm.png
 |   |-- PhD_SNPg_Score_Pathogenicity_Boxplot.png
+|   |-- RF_PCA.png
 |   `-- SVM_PCA.png
 |-- Peptides
 |   `-- wildtype.fasta
@@ -57,27 +60,30 @@ Understanding which specific PAH variants are associated with pathogenicity can 
 |   |-- esummary.json
 |   |-- features.txt
 |   |-- frameshift.txt
+|   |-- hydrophobicity.txt
 |   |-- label.txt
 |   |-- mutpred2_results.txt
 |   |-- nonsense.txt
 |   |-- silent.txt
 |   |-- substitutions.txt
-|   |-- test.py
-|   `-- variant_type
+|   `-- variant_type.txt
 |-- scripts
 |   |-- in_progress
 |   |   `-- mutations.py
+|   |-- MutPred2_Score_Beeswarm.png
+|   |-- PhD_SNPg_Score_Beeswarm.png
 |   |-- RF.py
 |   |-- SVM.py
-|   |-- accuracy.py
 |   |-- beeswarm.py
 |   |-- boxplot.py
-|   |-- cleaned.json
 |   |-- esummary.py
 |   |-- missense.py
 |   |-- mutpred.sh
+|   |-- physiochem.py
 |   `-- variants_esearch.py
-`-- PKU_README.md
+|-- README.md
+`-- Snakefile
+
 ```
 
 # Project Workflow
