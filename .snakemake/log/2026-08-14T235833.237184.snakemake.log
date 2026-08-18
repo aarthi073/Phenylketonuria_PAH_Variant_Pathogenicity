@@ -1,0 +1,61 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-14 23:58:33
+  Workflow ID: ba7beb8a-d255-42d2-b8a3-07e30ea8b9db
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.23.1
+  Python version: 3.14.6 | packaged by conda-forge | (main, Jun 12 2026, 08:59:43) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 1 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+step_one        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Fri Aug 14 23:58:33 2026]
+localrule step_one:
+    output: docs/esearch.json
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+RuleException:
+CalledProcessError in file "C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile", line 9:
+Command 'python scripts/variants_esearch.py' returned non-zero exit status 1.
+[Fri Aug 14 23:58:34 2026]
+Error in rule step_one:
+    message: None
+    jobid: 1
+    output: docs/esearch.json
+    shell:
+        python scripts/variants_esearch.py
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug 14 23:58:34 2026]
+Error in rule step_one:
+    message: None
+    jobid: 1
+    output: docs/esearch.json
+    shell:
+        python scripts/variants_esearch.py
+        (command exited with non-zero exit code)
+Complete log(s): C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\.snakemake\log\2026-08-14T235833.237184.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -26,12 +26,12 @@ for uid in ids:
         clinical = record.get('clinical_impact_classification', 'Unknown')
         onco = record.get('oncogenicity_classification', 'Unknown')
         vlist.append([variant, vname, HGVS, mutation_type, germ, clinical, onco])
-
 #only include missense vairants in vlist
 for i in vlist:
-        vlist = [i for i in vlist if "missense variant" in i[4]]
+        vlist = [i for i in vlist if "missense variant" in i[3]]
 for i in vlist:
-        desc = i[5]["description"]
+        desc = i[4]["description"]
+        print(desc)
         sub=i[2].rpartition(".")[-1]
         if ("?" not in sub) & ("_" not in sub) & ("-" not in sub) & ("+" not in sub) & (">" not in sub):
                 mut = sub
@@ -41,7 +41,6 @@ for i in vlist:
                 var_type.append(i)
         mut_classification.append(desc)
         mut_sub.append(clean_mis)
-
 from Bio.Data.IUPACData import protein_letters_3to1
 
 mut_1_code = []
@@ -62,7 +61,6 @@ for mutation in mut_sub:
 
 
 join = " ".join(mut_1_code)
-print(join)
 
 with open("../docs/cleaned.json","w") as f:
          json.dump(vlist, f, indent=2)
@@ -73,7 +71,7 @@ with open("../docs/substitutions.txt", "w") as f:
 with open("../docs/label.txt", "w") as f:
          for i in mut_classification:
                 f.write(i+"\n")
-with open("../docs/variant_type", "w") as f:
+with open("../docs/variant_type.txt", "w") as f:
          for i in var_type:
                 f.write(i+"\n")
 

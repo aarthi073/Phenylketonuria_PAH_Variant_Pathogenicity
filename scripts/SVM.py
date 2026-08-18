@@ -2,61 +2,54 @@ import re
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import pandas as pd
+import os
 from sklearn.svm import LinearSVC,SVC
 from sklearn.preprocessing import StandardScaler, LabelEncoder, OneHotEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.compose import ColumnTransformer
-import pandas as pd
-import os 
+from sklearn.inspection import permutation_importance
 
-docs = "../docs"
-
-files = { 
-         "substitutions": f"{docs}/substitutions.txt",
-         "pathogenicity": f"{docs}/label.txt"
-}
+files = { "substitutions": 'docs/substitutions.txt', "pathogenicity": 'docs/label.txt', "hydrophobicity":  'docs/hydrophobicity.txt'}
 
 df = {}
 for key, path_value in files.items():
 
   with open(path_value, "r") as f:
                 lines = [line.strip() for line in f]
-                df1 = pd.DataFrame(lines, columns=[key])
-  df[key] = df1
+                if key == "substitutions":
+                        orig_aa = []
+                        pos = []
+                        new_aa = []
+                        for line in lines:
+                                match = re.match(r"([A-Z])(\d+)([A-Z])", line)
+                                if not match:
+                                        print(f"Failed to parse: {line}")
+                                else: 
+                                        orig_aa.append(match.group(1))
+                                        pos.append(match.group(2))
+                                        new_aa.append(match.group(3))
+                                                         
+                df[key] = lines
+                df["orig_aa"] = orig_aa
+                df["pos"] = pos
+                df["new_aa"] = new_aa
+df = pd.DataFrame(df)
+
+#convert "pos" for position to integer so that numeric feature engineering can be applied
+df["pos"] = df["pos"].astype(int)
 
 
-def subs(X):
-        orig_aa = []
-        pos = []
-        new_aa = []
-        for i in X["substitutions"]["substitutions"]:
-                match = re.match(r"([A-Z])(\d+)([A-Z])",i)
-                if not match:
-                        print(f"Failed to parse: {i}")
-                else:
-                
-                        orig_aa.append(match.group(1))
-                        pos.append(match.group(2))
-                        new_aa.append(match.group(3))
-        return pd.DataFrame({
-        "orig_aa": orig_aa,       
-        "pos":pos,
-        "new_aa":new_aa 
-        })          
-
-df_new = subs(df)
-
-
-counts = df["pathogenicity"]["pathogenicity"].value_counts()
+counts = df["pathogenicity"].value_counts()
 unusable_classes = counts[counts < 2].index
 if len(unusable_classes) > 0:
         for c in unusable_classes: 
-                df["pathogenicity"]["pathogenicity"] = df["pathogenicity"]["pathogenicity"].replace(f"{c}", "Benign/Likely benign")
+                df["pathogenicity"] = df["pathogenicity"].replace(f"{c}", "Benign/Likely benign")
 
 
 #define features (x) and response variable (y)
-X = df_new[["orig_aa", "pos", "new_aa"]]
+X = df[["orig_aa", "pos", "new_aa", "hydrophobicity"]]
 y = df["pathogenicity"]
 
 #Label Encoding: transforms text categories of the response variable into numbers
@@ -64,17 +57,14 @@ le = LabelEncoder()
 #1D array expected
 y_encoded = le.fit_transform(np.ravel(y))
 
-#print(unusable_classes)
-#print(le.classes_)
-#print(pd.Series(y_encoded).value_counts())	
 
 #One-hot encoding and standardizing features
 #multi-columns of 0/1 for each amino acid 
 
 preprocessor = ColumnTransformer(
         transformers = [
-            ("cat", OneHotEncoder(handle_unknown="ignore"), ["orig_aa", "new_aa","pos"])
-            #("num", StandardScaler(), ["pos"])
+            ("cat", OneHotEncoder(handle_unknown="ignore"), ["orig_aa", "new_aa", "hydrophobicity"]),
+            ("num", StandardScaler(), ["pos"])
         ]
 )
 
@@ -119,13 +109,13 @@ plt.ylabel(f'Principal Component 2 ({var_pc2:.1f}% Variance)', fontsize=11)
 plt.legend(title='Target Class', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.tight_layout()
-#plt.show()
-
+plt.savefig("./Figures/SVM_PCA", dpi=300)
 
 
 #train-test split
 X_temp, X_test, y_temp, y_test = train_test_split(X_processed, y_encoded, test_size=0.15, stratify=y_encoded,random_state=42)
 X_train, X_val, y_train, y_val = train_test_split(X_temp, y_temp, test_size=0.15, stratify=y_temp, random_state=42)
+
 #Train a SVM classifier
 # Standard tuning grid for an RBF SVM
 # RBF-SVM: Accuracy Evaluation Metric
@@ -175,32 +165,37 @@ svm_acc = best_score
 svm_acc = best_score
 
 
-#svm_poly = SVC(kernel="poly", class_weight="balanced",degree=3, coef0=1, C=1)
-#svm_poly.fit(X_train, y_train)
-#y_pred = svm_poly.predict(X_test)
-
-
-#Accuracy
-#acc = accuracy_score(y_test, y_pred, normalize=True, sample_weight=None)
-#print(f"accuracy: {acc:.3f}")
-
 
 #Final Model Based on Best Accuracy
 final_model = SVC(kernel="rbf", C=best_params[0], gamma = best_params[1]).fit(X_train, y_train)
 y_pred_test = final_model.predict(X_test)
 test_acc = accuracy_score(y_test, y_pred_test)
 print(f"Final Test Accuracy (svm_rbf): {test_acc:.3f}")
-#visualizations: confusion matrix heatmaps, amino acid substitution frequency heatmaps.
+
+#visualizations
+#confusion matrix heatmap
+plt.figure(figsize=(8,6))
 cm = confusion_matrix(y_test, y_pred_test)
 sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Pathogenicity Confusion Matrix: SVM")
-plt.show()
+plt.savefig("./Figures/Pathogenicity_Confusion_Matrix_SVM", dpi=300)
 
 
-#Amino Acid Substitution Heatmap
-#aa_df = pd.DataFrame(df, 
-#plt.figure(figsize=(10,8))
+#Permutation Importance
 
+features = preprocessor.get_feature_names_out()
+importance = permutation_importance(final_model, X_test.toarray(), y_test, n_repeats=10, random_state=42, n_jobs=-1)
 
+print(importance)
+
+importance_df = pd.DataFrame(
+{"Feature": features, "Importance": importance.importances_mean}
+).sort_values(by="Importance", ascending=False)
+
+#Feature Importance
+plt.figure(figsize=(8,12))
+plt.barh(importance_df["Feature"], importance_df["Importance"])
+plt.title("Important Features - SVM")
+plt.savefig("Figures/Important_Features_SVM", dpi=300)

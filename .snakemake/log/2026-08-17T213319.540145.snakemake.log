@@ -1,0 +1,54 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-17 21:33:19
+  Workflow ID: 24396e54-5728-4ea9-8ca0-2ce64c291595
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.25.1
+  Python version: 3.12.13 | packaged by conda-forge | (main, Aug 11 2026, 10:18:27) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 4 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+RF           1
+all          1
+total        2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 17 21:33:20 2026]
+localrule RF:
+    output: Figures/RF_PCA.png, Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png, Figures/Important_Features_Random_Forest.png
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+Waiting at most 5 seconds for missing files:
+Figures/Important_Features_Random_Forest.png (missing locally)
+MissingOutputException in rule RF in file "C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile", line 35:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+Figures/Important_Features_Random_Forest.png (missing locally, parent dir contents: MutPred2_Score_Beeswarm.png, MutPred2_Score_Pathogenicity_Boxplot.png, MutPred2_Score_Stripplot.png, Pathogenicity_Confusion_Matrix_Random_Forest.png, Pathogenicity_Confusion_Matrix_SVM.png, PhD_SNPg_Alternate_Nucleotide_Stripplot.png, PhD_SNPg_PhyloP100_Beeswarm.png, PhD_SNPg_Score_Beeswarm.png, PhD_SNPg_Score_Pathogenicity_Boxplot.png, RF_PCA.png, SVM_PCA.png)
+Removing output files of failed job RF since they might be corrupted:
+Figures/RF_PCA.png, Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Mon Aug 17 21:33:32 2026]
+Error in rule RF:
+    message: None
+    jobid: 1
+    output: Figures/RF_PCA.png, Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png, Figures/Important_Features_Random_Forest.png
+Complete log(s): C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\.snakemake\log\2026-08-17T213319.540145.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -527,7 +527,7 @@
       {
         "term": "pathogenic[All Fields]",
         "field": "All Fields",
-        "count": "749636",
+        "count": "753202",
         "explode": "N"
       },
       "AND"

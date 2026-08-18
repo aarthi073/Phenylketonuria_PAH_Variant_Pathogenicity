@@ -1,0 +1,52 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-15 00:06:54
+  Workflow ID: 2b176aa4-232d-46aa-8a5a-93a977edfa3d
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.23.1
+  Python version: 3.14.6 | packaged by conda-forge | (main, Jun 12 2026, 08:59:43) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 1 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+step_one        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Aug 15 00:06:55 2026]
+localrule step_one:
+    output: docs/esearch.json
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+[Sat Aug 15 00:06:56 2026]
+Finished jobid: 1 (Rule: step_one)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Sat Aug 15 00:06:56 2026]
+localrule all:
+    input: docs/esearch.json
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+[Sat Aug 15 00:06:56 2026]
+Finished jobid: 0 (Rule: all)
+2 of 2 steps (100%) done
+Complete log(s): C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\.snakemake\log\2026-08-15T000654.832597.snakemake.log

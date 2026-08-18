@@ -2,19 +2,8 @@ from Bio import Entrez
 import json
 import requests
 
-#Entrez is a global search system by NCBI to search multiple health and science databases 
 
-search = Entrez.esearch(db="clinvar", term="PAH AND [p.Asp229Gly, p.Gly239Ala, p.Phe263Ser, p.Ala342Pro]")
-
-record = Entrez.read(search)
-
-
-#ids = record["idlist"]
-
-#print(record)
-
-
-file = "./esearch.json"
+file = "../docs/esearch.json"
 
 with open(file, "r") as f:
 
@@ -33,14 +22,12 @@ with open(file, "r") as f:
 	    "retmode": "json"
 	}
 
-print(idlist)
 
 
 response = requests.post(url, data=params)
 response.raise_for_status()
 ids = response.json()
-
-with open("esummary.json", "w") as new_f:
+with open(snakemake.output.json_file, "w") as new_f:
         json.dump(ids, new_f, indent=2)
 
 

@@ -1,3 +1,6 @@
+snakemake command; snakemake --cores 4 --forceall
+
+
 # Background
 
 Phenylketonuria (PKU) is an autosomal recessive inborn error of metabolism caused primarily by pathogenic variants in the phenylalanine hydroxylase (PAH) gene. PAH encodes a hepatic enzyme that catalyzes the conversion of phenylalanine (Phe) to tyrosine (Tyr). When PAH function is impaired, Phe accumulates in the blood and can cross the blood-brain barrier, resulting in neurological toxicity.
@@ -192,7 +195,7 @@ The prediction incorporates information such as:
 - Wild-type residue
 - Mutant residue
 
-*Outputs*
+**Outputs**
 
 PhD-SNPg provides information including:
 
@@ -223,7 +226,7 @@ The predictions from MutPred2 and PhD-SNPg were compared based on pathogenicity 
 
 When the pathogenicity labels were extracted from the ClinVar results for missense variants, there were no benign labels. The stripplots and beeswarm plots of both MutPred2 and PhD-SNPg show that the majority of the substitutions are pathogenic in PAH. However, there are still benign predictions. This is contrary to the original dataset predictions, and zooms in on specific substitutions to be more probable pathogenic candidates. Moreover, the interquartile range of MutPred2 predictions are narrower in the Benign class than the Pathogenic class, while that of the PhD_SNPg predictions do not look too different.
 
-*Results*
+**Results**
 
 The ClinVar-derived dataset contained pathogenic and uncertain/conflicting classifications but did not contain benign missense variants in the subset used for the initial analysis.
 
@@ -233,11 +236,11 @@ Both MutPred2 and PhD-SNPg predicted that the majority of analyzed PAH substitut
 
 This distinction is useful because the computational predictions provide additional information beyond the original ClinVar classifications and allow individual substitutions to be examined more closely.
 
-*MutPred2*
+**MutPred2**
 
 The MutPred2 score distributions showed differences between substitutions predicted to be pathogenic and those predicted to be benign/neutral. The interquartile range was narrower for the lower-pathogenicity group than for the higher-pathogenicity group. 
 
-*PhD-SNPg*
+**PhD-SNPg**
 
 PhD-SNPg similarly produced a mixture of pathogenic and benign/neutral predictions, although the distributions between the predicted classes appeared less separated than those observed for MutPred2.
 
@@ -256,40 +259,45 @@ The initial models included:
 
 Since amino acid substitutions can alter protein charges and physicochemical properties, pI-related features may provide useful information for distinguishing variants with different functional effects.
 
+
+**Exploratory Analysis: PCA Visualization**
+
+![SVM_PCA](./Figures/SVM_PCA.png)
+
 **SVM Results**
 
 The best initial SVM configuration achieved:
 
-Accuracy: 0.632
+C = 100, gamma = 1, validation accuracy = 0.656, training accuracy = 0.978
 
-C:        0.1
-
-Gamma:    0.01
+Final Test Accuracy (svm_rbf): 0.632
 
 ![SVM_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_SVM.png)
 
-**PCA Visualization**
+The high training accuracy compared to validation and test accuracy suggests overfitting. gamma = 1 is a higher value, which creates tight boundaries around individual points. Another method to choose gamma must be explored in addition to checking feature dimensionality due to one-hot encoding and cross-validation for hyperparameters.
 
-![SVM_PCA](./Figures/SVM_PCA.png)
+The overfitting and low test accuracy limits reliability on the model for pathogenicity prediction and feature importance.
 
 A Radial Basis Function (RBF) is suited for this kind of problem because amino acid substitution effects on pathogenicity are unlikely to be linearly separable, as it is a biologically non-linear problem.
 
+![important_Features_SVM](./Figures/Important_Features_SVM)
+
 **Random Forest Results**
 
-The initial Random Forest model achieved:
+Best number of estimators by validation: 10
 
-Accuracy: 0.656
-
-Number of trees: 10
+Final Test Accuracy Random Forest: 0.632
 
 ![Random_Forest_Confusion_Matrix](./Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png)
+
 
 The Random Forest model slightly outperformed the initial SVM model based on accuracy.
 
 However, these results should be interpreted cautiously because the dataset is relatively small. Additional validation and feature engineering are needed before assessing the generalizability of these models.
 
-**Discussion**
+![Important_Features_Random_Forest](./Figures/Pathogenicity_Confusion_Matrix_Random_Forest)
 
+**Discussion**
 This project combines clinical variant data, protein-level pathogenicity prediction, and machine learning to investigate missense variation in PAH associated with PKU.
 
 An important observation was that the ClinVar-derived dataset and computational predictors did not produce identical classifications. Although the original dataset consisted of clinically reported pathogenic, likely pathogenic, conflicting, and uncertain variants, MutPred2 and PhD-SNPg identified a broader range of predicted effects.
@@ -299,6 +307,8 @@ This discrepancy provides an opportunity to investigate individual PAH substitut
 The initial machine-
 learning models achieved approximately 63–66% accuracy, suggesting that variant-level biochemical and sequence features may contain predictive information. However, these preliminary results are not sufficient to establish a clinically useful classifier.
 
+Additionally, negative feature importance in SVM and near-zero feature importance in Random Forest support the likelihood of overfitting, which makes pathogenicity predictions unreliable. This is a priority next step before deciding what variants and properties are most likely to contribute to the PKU and induce neurological harm in newborns.
+
 8. Next Steps
 
 Future work will focus on improving the machine-learning pipeline and expanding the biological interpretation of individual variants. 
@@ -306,7 +316,6 @@ Future work will focus on improving the machine-learning pipeline and expanding 
 Incorporate additional features such as:
 
 - Amino acid physicochemical properties
-- Hydrophobicity
 - Isoelectric point
 - Charge
 
@@ -321,7 +330,9 @@ Model validation:
 
 These metrics will provide a more complete assessment than accuracy alone.
 
-Structural Analysis:
+
+
+**Structural Analysis**
 
 The effects of high-priority substitutions will be investigated using protein structural modeling tools such as AlphaFold. It would be helpful to see if variants are related to specific PAH structure such as the catalytic domain, conserved residues, or the BH4-binding region.
 

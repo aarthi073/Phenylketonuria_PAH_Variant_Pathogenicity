@@ -8,4 +8,4 @@
 
 DIR="/sciclone/scr10/abharathan01/PKU/scripts/mutpred2.0"
 
-${DIR}/run_mutpred2.sh -i wildtype.fasta -o mutpred2_results.txt
+${DIR}/run_mutpred2.sh -i wildtype.fasta -o ../docs/mutpred2_results_new.txt

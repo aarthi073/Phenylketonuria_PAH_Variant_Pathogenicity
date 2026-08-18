@@ -1,0 +1,103 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-15 00:04:52
+  Workflow ID: 1f99febc-b58d-45ad-abff-66c9317bdf80
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.23.1
+  Python version: 3.14.6 | packaged by conda-forge | (main, Jun 12 2026, 08:59:43) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 1 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Traceback (most recent call last):
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\cli.py", line 2310, in args_to_api
+    dag_api.execute_workflow(
+    ~~~~~~~~~~~~~~~~~~~~~~~~^
+        executor=args.executor,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<46 lines>...
+        scheduler_settings=scheduler_settings,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\api.py", line 645, in execute_workflow
+    workflow.execute(
+    ~~~~~~~~~~~~~~~~^
+        executor_plugin=executor_plugin,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        updated_files=updated_files,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\workflow.py", line 1340, in execute
+    self.async_run(
+    ~~~~~~~~~~~~~~^
+        self.dag.postprocess(update_needrun=False, check_initial=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\workflow.py", line 268, in async_run
+    return runner.run(coro)
+           ~~~~~~~~~~^^^^^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\asyncio\runners.py", line 128, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\asyncio\base_events.py", line 719, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\dag.py", line 1995, in postprocess
+    processor.process()
+    ~~~~~~~~~~~~~~~~~^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\dag.py", line 3464, in process
+    self.process_job(job)
+    ~~~~~~~~~~~~~~~~^^^^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\dag.py", line 3507, in process_job
+    script_sourcefile, _, _, _, _ = script.get_source(
+                                    ~~~~~~~~~~~~~~~~~^
+        script_entry,
+        ^^^^^^^^^^^^^
+    ...<3 lines>...
+        job.params,
+        ^^^^^^^^^^^
+    )
+    ^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\script\__init__.py", line 1378, in get_source
+    with sourcecache.open(source_file) as f:
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\sourcecache.py", line 809, in open
+    cache_entry = self._cache(source_file)
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\sourcecache.py", line 846, in _cache
+    self._do_cache(source_file, cache_entry)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\sourcecache.py", line 850, in _do_cache
+    mtime = source_file.mtime()
+
+  File "C:\Users\aarth\.conda\envs\snakemake\Lib\site-packages\snakemake\sourcecache.py", line 213, in mtime
+    return os.stat(self.path).st_mtime
+           ~~~~~~~^^^^^^^^^^^
+
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\aarth\\OneDrive - William & Mary\\Desktop\\GH\\PKU\\python scripts/variants_esearch.py'
+

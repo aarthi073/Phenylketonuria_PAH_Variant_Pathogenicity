@@ -1,0 +1,24 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-15 12:10:27
+  Workflow ID: a79f1a15-8a88-478d-baef-e7e94c0dc7e5
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.23.1
+  Python version: 3.14.6 | packaged by conda-forge | (main, Jun 12 2026, 08:59:43) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake -F --cores 4
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+MissingInputException in rule all in file "C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile", line 1:
+Missing input files for rule all:
+    affected files:
+        Figures/MutPred2_Score_Beeswarm.pngFigures/PhD_SNPg_Score_Beeswarm.png

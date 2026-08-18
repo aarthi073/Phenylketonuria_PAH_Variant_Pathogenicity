@@ -1,0 +1,62 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-17 21:39:34
+  Workflow ID: c4f60ea6-1c3c-4592-8b37-0ac667990550
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.25.1
+  Python version: 3.12.13 | packaged by conda-forge | (main, Aug 11 2026, 10:18:27) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 4 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+RF           1
+SVM          1
+all          1
+total        3
+
+Select jobs to execute...
+Execute 2 jobs...
+[Mon Aug 17 21:39:34 2026]
+localrule RF:
+    output: Figures/RF_PCA.png, Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png, Figures/Important_Features_Random_Forest.png
+    jobid: 2
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+[Mon Aug 17 21:39:34 2026]
+localrule SVM:
+    output: Figures/SVM_PCA.png, Figures/Pathogenicity_Confusion_Matrix_SVM.png, Figures/Important_Features_SVM.png
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+[Mon Aug 17 21:39:46 2026]
+Finished jobid: 2 (Rule: RF)
+1 of 3 steps (33%) done
+[Mon Aug 17 21:39:49 2026]
+Finished jobid: 1 (Rule: SVM)
+2 of 3 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Aug 17 21:39:49 2026]
+localrule all:
+    input: Figures/SVM_PCA.png, Figures/Pathogenicity_Confusion_Matrix_SVM.png, Figures/Important_Features_SVM.png, Figures/RF_PCA.png, Figures/Pathogenicity_Confusion_Matrix_Random_Forest.png, Figures/Important_Features_Random_Forest.png
+    jobid: 0
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+[Mon Aug 17 21:39:49 2026]
+Finished jobid: 0 (Rule: all)
+3 of 3 steps (100%) done
+Complete log(s): C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\.snakemake\log\2026-08-17T213934.207212.snakemake.log

@@ -1,0 +1,55 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-08-14 23:56:18
+  Workflow ID: 08976112-17e8-4403-9f63-a9772b53f0e1
+  Platform: Windows-11-10.0.26200-SP0
+  Host: aarthi
+  User: aarth
+  Snakemake version: 9.23.1
+  Python version: 3.14.6 | packaged by conda-forge | (main, Jun 12 2026, 08:59:43) [MSC v.1944 64 bit (AMD64)]
+  Command: C:\Users\aarth\.conda\envs\snakemake\Scripts\snakemake --cores 1 --forceall
+  Snakefile: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile
+  Base directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Run directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Working directory: C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job         count
+--------  -------
+step_one        1
+all             1
+total           2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Fri Aug 14 23:56:19 2026]
+localrule step_one:
+    output: docs/esearch.json
+    jobid: 1
+    reason: Forced execution
+    resources: tmpdir=C:\Users\aarth\AppData\Local\Temp
+Waiting at most 5 seconds for missing files:
+docs/esearch.json (missing locally)
+MissingOutputException in rule step_one in file "C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\Snakefile", line 5:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+docs/esearch.json (missing locally, parent dir contents: cleaned.json, clinvar_result.txt, deletions.txt, esummary.json, features.txt, frameshift.txt, label.txt, Mutpred2_Results.tsv, mutpred2_results.txt, nonsense.txt, Phd-Snp_Results.tsv, Phd_SNPg_Results.txt, silent.txt, substitutions.txt, variant_type, variant_type.txt)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug 14 23:56:25 2026]
+Error in rule step_one:
+    message: None
+    jobid: 1
+    output: docs/esearch.json
+    shell:
+        python scripts/variants_esearch.py
+        (command exited with non-zero exit code)
+Complete log(s): C:\Users\aarth\OneDrive - William & Mary\Desktop\GH\PKU\.snakemake\log\2026-08-14T235618.400817.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
