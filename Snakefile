@@ -18,6 +18,11 @@ rule result_summary:
                 json_file = "docs/esummary.json"
         script:
                 "scripts/esummary.py"
+rule hydrophobicity:
+        output: 
+               txt_file = "docs/hydrophobicity.txt"
+        script:
+                "scripts/physiochem.py"
 rule plots:
         input:
                 phd_snp = "docs/Phd_SNPg_Results.txt",

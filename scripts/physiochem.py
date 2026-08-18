@@ -18,6 +18,6 @@ with open("../docs/substitutions.txt", "r") as f:
                 elif ('R' in mut) | ('H' in mut) | ('K' in mut):
                         hphilB = "hydrophilic_basic"
                         physchem.append(hphilB)
-with open("hydrophobicity.txt", "w") as f:
+with open(snakemake.output.txt_file, "w") as f:
         for i in physchem:
                 f.write(i+"\n")
