@@ -279,7 +279,7 @@ The overfitting and low test accuracy limits reliability on the model for pathog
 
 A Radial Basis Function (RBF) is suited for this kind of problem because amino acid substitution effects on pathogenicity are unlikely to be linearly separable, as it is a biologically non-linear problem.
 
-![important_Features_SVM](./Figures/Important_Features_SVM)
+![important_Features_SVM](./Figures/Important_Features_SVM.png)
 
 **Random Forest Results**
 
@@ -294,9 +294,11 @@ The Random Forest model slightly outperformed the initial SVM model based on acc
 
 However, these results should be interpreted cautiously because the dataset is relatively small. Additional validation and feature engineering are needed before assessing the generalizability of these models.
 
-![Important_Features_Random_Forest](./Figures/Pathogenicity_Confusion_Matrix_Random_Forest)
+![Important_Features_Random_Forest](./Figures/Important_Features_Random_Forest.png)
+
 
 **Discussion**
+
 This project combines clinical variant data, protein-level pathogenicity prediction, and machine learning to investigate missense variation in PAH associated with PKU.
 
 An important observation was that the ClinVar-derived dataset and computational predictors did not produce identical classifications. Although the original dataset consisted of clinically reported pathogenic, likely pathogenic, conflicting, and uncertain variants, MutPred2 and PhD-SNPg identified a broader range of predicted effects.
