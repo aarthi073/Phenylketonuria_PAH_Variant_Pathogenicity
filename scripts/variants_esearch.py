@@ -12,9 +12,11 @@ params = {
 response = requests.get(url, params=params)
 data = response.json()
 
-with open(snakemake.output.json_file, "w") as f:
-    json.dump(data, f, indent=2)
+#with open(snakemake.output.json_file, "w") as f:
+with open("esearch.json", "w") as f: 
+        json.dump(data, f, indent=2)
 
 print(data["esearchresult"]["idlist"])
 
-print(data)
+count = len(data["esearchresult"]["idlist"])
+print(f"Number of IDs found: {count}")

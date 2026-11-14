@@ -172,7 +172,7 @@ Two computational predictors were used to investigate the potential effects of P
 
 These tools evaluate whether individual amino acid substitutions are likely to have deleterious effects.
 
-A. MutPred2
+A. MutPred2--Used Linux Tool
 
 MutPred2 is a machine-learning-based predictor of the pathogenicity of amino acid substitutions. It uses sequence-derived features describing the wild-type and mutant proteins and applies neural-network models to estimate the likelihood that a substitution is disease-associated.
 
@@ -190,7 +190,7 @@ For this analysis:
 
 MutPred2 score > 0.5 → predicted pathogenic
 
-B. PhD-SNPg
+B. PhD-SNPg--Used Web Server: ![https://snps.biofold.org/phd-snp/phd-snp.html]
 
 PhD-SNPg is a machine-learning predictor that uses a Gradient Boosting to classify single amino acid substitutions as pathogenic or benign.
 
@@ -345,7 +345,7 @@ The effects of high-priority substitutions will be investigated using protein st
 
 Additionally, running the machine learning pipelines on additional mutations such as frameshifts and nonsense mutations can give a more holistic view of the mutations that drive PKU. Each component of the pipeline will be automated using SnakeMake.
 
-# Technologies and Tools**
+# Technologies and Tools
 
 **Programming**
 

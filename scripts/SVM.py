@@ -11,7 +11,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score
 from sklearn.compose import ColumnTransformer
 from sklearn.inspection import permutation_importance
 
-files = { "substitutions": 'docs/substitutions.txt', "pathogenicity": 'docs/label.txt', "hydrophobicity":  'docs/hydrophobicity.txt'}
+files = { "substitutions": '../docs/substitutions.txt', "pathogenicity": '../docs/label.txt', "hydrophobicity":  '../docs/hydrophobicity.txt'}
 
 df = {}
 for key, path_value in files.items():
@@ -37,6 +37,15 @@ for key, path_value in files.items():
                 df["new_aa"] = new_aa
 df = pd.DataFrame(df)
 
+#No null values
+print(df.isnull().sum())
+
+#Redundancy: 2 --> S67A, Q172H
+#print(df[df.duplicated(keep=False)])
+
+df = df.drop_duplicates()
+print(df[df.duplicated(keep=False)])
+
 #convert "pos" for position to integer so that numeric feature engineering can be applied
 df["pos"] = df["pos"].astype(int)
 
@@ -46,6 +55,9 @@ unusable_classes = counts[counts < 2].index
 if len(unusable_classes) > 0:
         for c in unusable_classes: 
                 df["pathogenicity"] = df["pathogenicity"].replace(f"{c}", "Benign/Likely benign")
+
+
+
 
 
 #define features (x) and response variable (y)
@@ -68,13 +80,23 @@ preprocessor = ColumnTransformer(
         ]
 )
 
+#Exploration
+#Amino Acid Hydrophobicity Pie Chart
+counts = df["hydrophobicity"].value_counts()
+plt.figure(figsize=(8,6))
+plt.pie(counts, labels=counts.index, autopct='%1.1f%%', startangle=140, textprops={'fontsize': 11})
+plt.title('Mutated Amino Acid Hydrophobicity')
+plt.tight_layout()
+plt.savefig("../Figures/Mutated_Amino_Acid_Hydrophobicity")
+
+
 X_processed = preprocessor.fit_transform(X)
 
 #PCA
 from sklearn.decomposition import PCA
 
 # 1. Initialize PCA to reduce data to 2 dimensions
-# If X_processed is a sparse matrix (common with OneHotEncoder), convert to dense array
+# If X_processed is a sparse matrix, convert to dense array
 X_dense = X_processed.toarray() if hasattr(X_processed, "toarray") else X_processed
 pca = PCA(n_components=2, random_state=42)
 
@@ -109,7 +131,7 @@ plt.ylabel(f'Principal Component 2 ({var_pc2:.1f}% Variance)', fontsize=11)
 plt.legend(title='Target Class', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.tight_layout()
-plt.savefig("./Figures/SVM_PCA", dpi=300)
+plt.savefig("../Figures/SVM_PCA", dpi=300)
 
 
 #train-test split
@@ -180,11 +202,10 @@ sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Pathogenicity Confusion Matrix: SVM")
-plt.savefig("./Figures/Pathogenicity_Confusion_Matrix_SVM", dpi=300)
+plt.savefig("../Figures/Pathogenicity_Confusion_Matrix_SVM", dpi=300)
 
 
 #Permutation Importance
-
 features = preprocessor.get_feature_names_out()
 importance = permutation_importance(final_model, X_test.toarray(), y_test, n_repeats=10, random_state=42, n_jobs=-1)
 
@@ -198,4 +219,5 @@ importance_df = pd.DataFrame(
 plt.figure(figsize=(8,12))
 plt.barh(importance_df["Feature"], importance_df["Importance"])
 plt.title("Important Features - SVM")
-plt.savefig("Figures/Important_Features_SVM", dpi=300)
+plt.savefig("../Figures/Important_Features_SVM", dpi=300)
+

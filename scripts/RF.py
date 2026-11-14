@@ -10,7 +10,7 @@ from sklearn.compose import ColumnTransformer
 import pandas as pd
 import os
 
-files = { "substitutions": 'docs/substitutions.txt', "pathogenicity": 'docs/label.txt', "hydrophobicity":  'docs/hydrophobicity.txt'}
+files = { "substitutions": '../docs/substitutions.txt', "pathogenicity": '../docs/label.txt', "hydrophobicity":  '../docs/hydrophobicity.txt'}
 
 df = {}
 for key, path_value in files.items():
@@ -35,6 +35,15 @@ for key, path_value in files.items():
                 df["pos"] = pos
                 df["new_aa"] = new_aa
 df = pd.DataFrame(df)
+
+#No null values
+#print(df.isnull().sum())
+
+#Redundancy: 2 --> S67A, Q172H
+#print(df[df.duplicated(keep=False)])
+
+df = df.drop_duplicates()
+print(df[df.duplicated(keep=False)])
 
 #convert "pos" for position to integer so that numeric feature engineering can be applied
 df["pos"] = df["pos"].astype(int)
@@ -108,7 +117,7 @@ plt.ylabel(f'Principal Component 2 ({var_pc2:.1f}% Variance)', fontsize=11)
 plt.legend(title='Target Class', bbox_to_anchor=(1.05, 1), loc='upper left')
 plt.grid(True, linestyle=':', alpha=0.6)
 plt.tight_layout()
-plt.savefig("./Figures/RF_PCA", dpi=300)
+plt.savefig("../Figures/RF_PCA", dpi=300)
 
 
 
@@ -144,7 +153,7 @@ sns.heatmap(cm, annot=True, fmt="d", cmap="Blues")
 plt.xlabel("Predicted")
 plt.ylabel("Actual")
 plt.title("Pathogenicity Confusion Matrix: Random Forest")
-plt.savefig("Figures/Pathogenicity_Confusion_Matrix_Random_Forest", dpi=300)
+plt.savefig("../Figures/Pathogenicity_Confusion_Matrix_Random_Forest", dpi=300)
 
 
 #feature importance
@@ -154,4 +163,4 @@ importances = final_model.feature_importances_
 indices = np.argsort(importances)[::-1][:10] 
 plt.barh(np.array(features)[indices][::-1], importances[indices][::-1]) 
 plt.title("Important Features - Random Forest Classifier") 
-plt.savefig("Figures/Important_Features_Random_Forest", dpi=300)
+plt.savefig("../Figures/Important_Features_Random_Forest", dpi=300)
