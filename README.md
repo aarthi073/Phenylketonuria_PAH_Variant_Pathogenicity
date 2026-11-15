@@ -219,7 +219,7 @@ The predictions from MutPred2 and PhD-SNPg were compared based on pathogenicity 
 
 ![Beeswarm](./Figures/MutPred2_Score_Beeswarm.png)
 
-![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Altered_Nucleotide_Stripplot.png)
+![Alternate_Nucleotide_Stripplot](./Figures/PhD_SNPg_Alternate_Nucleotide_Stripplot)
 
 ![Phd_SNPg_PhyloP100_Beeswarm](./Figures/PhD_SNPg_PhyloP100_Beeswarm.png)
 
@@ -350,8 +350,6 @@ Additionally, running the machine learning pipelines on additional mutations suc
 **Programming**
 
 - Python
-
-- R
 
 - Bash / Unix
 
