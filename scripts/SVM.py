@@ -209,7 +209,7 @@ plt.savefig("../Figures/Pathogenicity_Confusion_Matrix_SVM", dpi=300)
 features = preprocessor.get_feature_names_out()
 importance = permutation_importance(final_model, X_test.toarray(), y_test, n_repeats=10, random_state=42, n_jobs=-1)
 
-print(importance)
+print(importance.importances_mean)
 
 importance_df = pd.DataFrame(
 {"Feature": features, "Importance": importance.importances_mean}
@@ -219,5 +219,5 @@ importance_df = pd.DataFrame(
 plt.figure(figsize=(8,12))
 plt.barh(importance_df["Feature"], importance_df["Importance"])
 plt.title("Important Features - SVM")
-plt.savefig("../Figures/Important_Features_SVM", dpi=300)
+plt.savefig("../Figures/Important_Features_SVM.png", dpi=300)
 
